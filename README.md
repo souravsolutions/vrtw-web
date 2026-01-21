@@ -1,52 +1,73 @@
-# create-vrtw · Web
+# React + TypeScript + Vite
 
-> **A lightning-fast CLI to bootstrap Vite + React + JavaScript/TypeScript + Tailwind CSS v4 projects.**
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-This is the official landing site for [`create-vrtw`](https://www.npmjs.com/package/create-vrtw), a zero-config CLI that sets up a modern frontend stack in seconds.  
-Choose between JavaScript or TypeScript, and get coding instantly with all boilerplate and default files cleaned up!
+Currently, two official plugins are available:
 
-**See the CLI repo:** [github.com/avijit07x/create-vrtw](https://github.com/avijit07x/create-vrtw)
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-**Try the CLI now:**
+## React Compiler
 
-```sh
-npx create-vrtw
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+
+## Expanding the ESLint configuration
+
+If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+
+```js
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
+
+      // Remove tseslint.configs.recommended and replace with this
+      tseslint.configs.recommendedTypeChecked,
+      // Alternatively, use this for stricter rules
+      tseslint.configs.strictTypeChecked,
+      // Optionally, add this for stylistic rules
+      tseslint.configs.stylisticTypeChecked,
+
+      // Other configs...
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
 ```
-or (if installed globally):
 
-```sh
-create-vrtw
+You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+
+```js
+// eslint.config.js
+import reactX from 'eslint-plugin-react-x'
+import reactDom from 'eslint-plugin-react-dom'
+
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
+      // Enable lint rules for React
+      reactX.configs['recommended-typescript'],
+      // Enable lint rules for React DOM
+      reactDom.configs.recommended,
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
 ```
-
-## 🌟 Features
-
--   Vite + React starter (choose JS or TS)
--   Tailwind CSS v4 (latest, plugin-based) out-of-the-box
--   Auto-cleans unnecessary files and assets
--   Ready-to-code: just run and start building
--   One command, zero config!
-
-## 🔗 Live Site
-
-[👉 Visit the landing page here](https://vrtw.vercel.app)
-
-<!-- ## 📸 Screenshots -->
-
-## 🛠️ Built With
-
--   [Vite](https://vitejs.dev/)
--   [Tailwind CSS](https://tailwindcss.com/)
--   [React](https://react.dev/)
--   [TypeScript](https://www.typescriptlang.org/) (optional user choice)
--   [create-vrtw CLI](https://www.npmjs.com/package/create-vrtw)
-
-## 🤝 Contributing
-
-Found a typo or want to improve the site?  
-Feel free to open an issue or pull request!
-
-## 📄 License
-
-MIT
-
-**Fastest way to scaffold a modern frontend. Try it today! 🚀**
