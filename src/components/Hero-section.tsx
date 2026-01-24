@@ -11,7 +11,7 @@ export default function HeroSection() {
   return (
     <>
       <main className='overflow-hidden'>
-        <section className='relative min-h-screen flex items-start pt-10 sm:pt-10'>
+        <section className='relative flex justify-center items-center min-h-[calc(100vh-4.25rem)] lg:items-start lg:pt-10'>
           <div className='relative w-full py-24 lg:py-28'>
             <div className='mx-auto max-w-7xl px-6 md:px-12'>
               <div className='text-center sm:mx-auto sm:w-10/12 lg:mr-auto lg:mt-0 lg:w-4/5'>
