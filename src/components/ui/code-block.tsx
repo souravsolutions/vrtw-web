@@ -249,7 +249,7 @@ export function CodeBlock({
 							}}
 							className="font-mono text-zinc-950 dark:text-zinc-50 block whitespace-pre"
 						>
-							{currentCode}
+							$ {currentCode}
 						</motion.code>
 					</AnimatePresence>
 				</pre>
