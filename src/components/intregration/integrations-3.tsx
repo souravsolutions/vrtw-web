@@ -1,12 +1,12 @@
 import React from "react";
 
 import {
-  Gemini,
-  Replit,
-  MagicUI,
-  VSCodium,
-  MediaWiki,
-  GooglePaLM,
+  TailwindLogo,
+  RouterLogo,
+  TypescriptLogo,
+  ReduxLogo,
+  ZustandLogo,
+  JavaScriptLogo,
 } from "../logos";
 import { LogoIcon } from "../logo";
 import { cn } from "../../lib/utils";
@@ -24,16 +24,16 @@ export default function IntegrationsSection() {
               />
               <div className='mx-auto mb-2 flex w-fit justify-center gap-2'>
                 <IntegrationCard>
-                  <Gemini />
+                  <TailwindLogo />
                 </IntegrationCard>
                 <IntegrationCard>
-                  <Replit />
+                  <RouterLogo />
                 </IntegrationCard>
               </div>
 
               <div className='mx-auto my-2 flex w-fit justify-center gap-2'>
                 <IntegrationCard>
-                  <MagicUI />
+                  <TypescriptLogo />
                 </IntegrationCard>
 
                 <IntegrationCard
@@ -44,17 +44,17 @@ export default function IntegrationsSection() {
                 </IntegrationCard>
 
                 <IntegrationCard>
-                  <VSCodium />
+                  <ReduxLogo />
                 </IntegrationCard>
               </div>
 
               <div className='mx-auto flex w-fit justify-center gap-2'>
                 <IntegrationCard>
-                  <MediaWiki />
+                  <ZustandLogo />
                 </IntegrationCard>
 
                 <IntegrationCard>
-                  <GooglePaLM />
+                  <JavaScriptLogo />
                 </IntegrationCard>
               </div>
             </div>

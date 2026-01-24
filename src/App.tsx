@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import PricingComparator from "./components/comparison/pricing-comparator";
+import PricingComparator from "./components/comparison/comparator";
 import Features from "./components/featured/features-10";
 import FooterSection from "./components/footer/Footer";
 import HeroSection from "./components/Hero-section";
