@@ -15,10 +15,10 @@ const Navbar: FC<Props> = ({ navRef }) => {
   const githubRef = useRef<GithubIconHandle>(null);
 
   return (
-    <header ref={navRef}>
+    <header ref={navRef} className='h-17'>
       <nav
         data-state={menuState && "active"}
-        className='fixed z-20 w-full border-b border-dashed bg-white backdrop-blur md:relative dark:bg-zinc-950/50 lg:dark:bg-transparent h-17'
+        className='fixed z-20 w-full border-b border-dashed bg-white backdrop-blur md:relative dark:bg-zinc-950/50 lg:dark:bg-transparent '
       >
         <div className='m-auto max-w-5xl px-6'>
           <div className='flex flex-wrap items-center justify-between gap-6 py-3 lg:gap-0 '>
@@ -48,7 +48,7 @@ const Navbar: FC<Props> = ({ navRef }) => {
                   target='_blank'
                   rel='noopener noreferrer'
                 >
-                  <NPM className='size-5 justify-center' />
+                  <NPM className='size-5 ' />
                 </a>
               </div>
 
